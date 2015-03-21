@@ -1,4 +1,32 @@
 % e-book header
 
-\documentclass[12pt]{book}
+\documentclass[oneside,12pt]{book}
+\usepackage[paperwidth=210mm,paperheight=148mm,margin=5mm]{geometry}
 
+% Cyrillization
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}
+
+% pdflatex options
+\usepackage[unicode]{hyperref}
+\newcommand{\email}[1]{$<$\href{mailto:#1}{#1}$>$}
+\usepackage[pdftex]{graphicx}
+
+% font setup for screen reading
+\renewcommand{\familydefault}{\sfdefault}
+\normalfont
+
+% relative sectioning
+\usepackage{ifthen}
+\newcounter{secdepth}\setcounter{secdepth}{0}
+\newcommand{\secup}{\addtocounter{secdepth}{1}}
+\newcommand{\secdown}{\addtocounter{secdepth}{-1}}
+\newcommand{\secrel}[1]{
+\ifthenelse{\equal{\value{secdepth}}{0}}{\part{#1}}{}
+\ifthenelse{\equal{\value{secdepth}}{-1}}{\chapter{#1}}{}
+\ifthenelse{\equal{\value{secdepth}}{-2}}{\section{#1}}{}
+\ifthenelse{\equal{\value{secdepth}}{-3}}{\subsection{#1}}{}
+\ifthenelse{\equal{\value{secdepth}}{-4}}{\subsubsection{#1}}{}
+}

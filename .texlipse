@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Sat Mar 21 11:54:45 GST 2015
+markTmpDer=true
+builderNum=2
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=bcollis.tex
+outputFile=bcollis.pdf
+langSpell=ru
+markDer=true
+srcDir=
